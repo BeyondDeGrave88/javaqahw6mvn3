@@ -1,10 +1,5 @@
 package ru.netology.javaqahw6mvn3.services;
 
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
-
 public class StatsService {
     //Сумма
     public static int getSummarySales(int[] sales) {
@@ -28,6 +23,15 @@ public class StatsService {
     }
 
     //Максимум в каком месяце
+    public int getMaxMonth(int[] sales) {
+        int maxMonth = 0;
+        for (int n = 0; n < sales.length; n++) {
+        if (sales[n] > sales[maxMonth] ) {
+            maxMonth = n;
+         }
+       }
+        return maxMonth + 1;
+     }
 
 
     // Минимум в каком месяце
@@ -73,29 +77,6 @@ public class StatsService {
             }
         }
         return count;
-
-        //Минимальные продажи
-        //public int getMinSales(int[] sales) {
-        // int minSales = sales[0];
-        //  for (int n : sales) {
-        //    if (n < minSales) {
-        //      minSales = n;
-        //  }
-        //}
-        // return minSales;
-
-        //}
-
-        //Максимальные продажи
-        //public int getMaxSales(int[] sales) {
-        // int maxSales = sales[0];
-        // for (int n : sales) {
-        //  if (n > maxSales) {
-        //  maxSales = n;
-        //}
-        //}
-        //return maxSales;
-        // }
     }
 }
 

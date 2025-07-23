@@ -26,16 +26,16 @@ public class StatsServiceTest {
         Assertions.assertEquals(expectedAverage, actualAverage);
     }
 
-    //@Test
-    //public void shouldFindMaxMonth() {
-        //StatsService service = new StatsService();
+    @Test
+    public void shouldFindMaxMonth() {
+        StatsService service = new StatsService();
 
-        //int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-       // int expectedMonth = 8;
-        //int actualMonth = service.getMaxMonth(sales);
-       // Assertions.assertEquals(expectedMonth, actualMonth);
-    //}
+         int expectedMonth = 6;
+         int actualMonth = service.getMaxMonth(sales);
+         Assertions.assertEquals(expectedMonth, actualMonth);
+    }
 
 
     @Test
