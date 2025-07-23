@@ -8,11 +8,12 @@ public class Main {
         StatsService service = new StatsService();
 
 
-        int[] arr = {
+        long[] arr = {
                 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18
         };
 
         System.out.println(Arrays.toString(arr));
+
     }
 
 }

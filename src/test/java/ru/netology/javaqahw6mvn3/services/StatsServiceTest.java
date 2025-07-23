@@ -8,22 +8,26 @@ public class StatsServiceTest {
     @Test
     public void shouldFindSummarySales() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedSummary = 180;
-        int actualSummary = service.getSummarySales(sales);
+        long expectedSummary = 180;
+        long actualSummary = service.getSummarySales(sales);
         Assertions.assertEquals(expectedSummary, actualSummary);
+        System.out.println(expectedSummary + " == ? == " + actualSummary);
+
 
     }
 
     @Test
     public void shouldFindAverageSales() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAverage = 15;
-        int actualAverage = service.getAverageSales(sales);
+        long expectedAverage = 15;
+        long actualAverage = service.getAverageSales(sales);
         Assertions.assertEquals(expectedAverage, actualAverage);
+        System.out.println(expectedAverage + " == ? == " + actualAverage);
+
     }
 
     @Test
@@ -32,9 +36,11 @@ public class StatsServiceTest {
 
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-         int expectedMonth = 6;
-         int actualMonth = service.getMaxMonth(sales);
-         Assertions.assertEquals(expectedMonth, actualMonth);
+        int expectedMonth = 6;
+        int actualMonth = service.getMaxMonth(sales);
+        Assertions.assertEquals(expectedMonth, actualMonth);
+        System.out.println(expectedMonth + " == ? == " + actualMonth);
+
     }
 
 
@@ -47,48 +53,30 @@ public class StatsServiceTest {
         int expectedMonth = 9;
         int actualMonth = service.getMinMonth(sales);
         Assertions.assertEquals(expectedMonth, actualMonth);
+        System.out.println(expectedMonth + " == ? == " + actualMonth);
+
     }
 
     @Test
     public void shouldFindBelowAverageSales() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAverage = 5;
-        int actualAverage = StatsService.countMonthsBelowAverageSales(sales);
-        Assertions.assertEquals(expectedAverage, actualAverage);
+        long expectedMonths = 5;
+        long actualMonths = StatsService.countMonthsBelowAverageSales(sales);
+        Assertions.assertEquals(expectedMonths, actualMonths);
+        System.out.println(expectedMonths + " == ? == " + actualMonths);
     }
 
     @Test
-    public void shouldFindHigherAverageSales() {
+    public void shouldFindAboveAverageSales() {
         StatsService service = new StatsService();
-        int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
+        long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAverage = 5;
-        int actualAverage = StatsService.countMonthsHigherAverageSales(sales);
-        Assertions.assertEquals(expectedAverage, actualAverage);
-
-        //@Test
-        //public void shouldFindMinSales() {
-        //StatsService service = new StatsService();
-
-        //int[] sales = { 8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18 };
-
-        //int expectedSales = 7;
-        //int actualSales = service.getMinSales(sales);
-        //Assertions.assertEquals(expectedSales, actualSales);
-        // }
-        //@Test
-        //public void shouldFindMaxSales() {
-        //StatsService service = new StatsService();
-
-        //int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
-
-        //int expectedSales = 20;
-        //int actualSales = service.getMaxSales(sales);
-        //Assertions.assertEquals(expectedSales, actualSales);
-        // }
-
+        long expectedMonths = 5;
+        long actualMonths = StatsService.countMonthsAboveAverageSales(sales);
+        Assertions.assertEquals(expectedMonths, actualMonths);
+        System.out.println(expectedMonths + " == ? == " + actualMonths);
 
     }
 }
